@@ -1,17 +1,20 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
 const Letter = (props) => {
     const [hidden, setHidden] = useState(true);
     return (
-        hidden?
-            <p>
-                __
-            </p>
+        (props.value === " ") ?
+            <p>space</p>
             :
-            <p>
-                {props.value}
+            hidden ?
+                <p>
+                    __
             </p>
+                :
+                <p>
+                    {props.value}
+                </p>
     );
 }
- 
+
 export default Letter;
