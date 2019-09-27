@@ -10,7 +10,7 @@ const LetterBank = (props) => {
                 props.letters.map(letter => {
                     return (
                         <span>
-                            {letter}
+                            {letter} &nbsp;
                         </span>
                     )
                 })

@@ -1,19 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Letter = (props) => {
     const [hidden, setHidden] = useState(true);
+    useEffect(()=>{if(props.guessed) setHidden(false)}, [props.guessed])
     return (
         (props.value === " ") ?
-            <p>space</p>
+            <span>
+                &nbsp; &nbsp;
+            </span>
             :
             hidden ?
-                <p>
-                    __
-            </p>
+                <span>
+                    __ &nbsp;
+                </span>
                 :
-                <p>
-                    {props.value}
-                </p>
+                <span>
+                    {props.value} &nbsp;
+                </span>
     );
 }
 
