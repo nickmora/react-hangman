@@ -5,20 +5,28 @@ const LetterBank = (props) => {
         console.log(props)
     }, [props])
     return (
-        <div>
-            {props.letters.length ?
-                props.letters.map(letter => {
-                    return (
-                        <span>
-                            {letter} &nbsp;
-                        </span>
-                    )
-                })
-                :
-                <div>
-                    Guess a letter
+        <div className="letterBank">
+            <div>
+
+                {props.letters.length ?
+                    <div>
+                        <p>
+                            Letters You've Guessed:
+                        </p>
+                        {props.letters.map(letter => {
+                            return (
+                                <span className = "guessedLetter">
+                                    {letter}
+                                </span>
+                            )
+                        })}
+                    </div>
+                    :
+                    <div>
+                        Guess a letter
                 </div>
-            }
+                }
+            </div>
         </div>
     );
 }

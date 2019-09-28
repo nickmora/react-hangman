@@ -5,16 +5,16 @@ const Letter = (props) => {
     useEffect(()=>{if(props.guessed) setHidden(false)}, [props.guessed])
     return (
         (props.value === " ") ?
-            <span>
+            <span className="letter">
                 &nbsp; &nbsp;
             </span>
             :
             hidden ?
-                <span>
-                    __ &nbsp;
+                <span className="letter">
+                    __
                 </span>
                 :
-                <span>
+                <span className="letter">
                     {props.value} &nbsp;
                 </span>
     );
