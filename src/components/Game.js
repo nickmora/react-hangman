@@ -50,7 +50,6 @@ const Game = () => {
     useEffect(()=>{
         if(lettersLeft<=0){
             setGameOver(true);
-            // alert("You win!");
         }
     }, [lettersLeft]);
     useEffect(()=>{

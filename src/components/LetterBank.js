@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import uuid from "uuid/v4"
 
 const LetterBank = (props) => {
     useEffect(() => {
@@ -15,7 +16,7 @@ const LetterBank = (props) => {
                         </p>
                         {props.letters.map(letter => {
                             return (
-                                <span className = "guessedLetter">
+                                <span key = {uuid()} className = "guessedLetter">
                                     {letter}
                                 </span>
                             )
