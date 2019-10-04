@@ -6,7 +6,7 @@ const GameOverModal = (props) => {
             <div className = "modalContent">
                 Did you want to play again?
             <div>
-                    <button>
+                    <button onClick = {props.resetGame}>
                         Yes
                     </button>
                     <button>

@@ -58,6 +58,15 @@ const Game = () => {
             :
             setModalOpen(false)
     }, [gameOver]);
+
+    const resetGame = () =>{
+        setGuesses(10);
+        setModalOpen(false);
+        setWord("test word two");
+        setGuessedLetters([]);
+        setGameOver(false);
+        setLettersLeft(Array.from(new Set(word.replace(/\s/g, "").split(""))).length);
+    }
     return (
         <div>
             <p>
@@ -65,7 +74,7 @@ const Game = () => {
             </p>
             <MysteryWord word={word} letters={guessedLetters.filter(letter => word.split("").includes(letter))} />
             <LetterBank letters={guessedLetters.filter(letter => !word.split("").includes(letter))} />
-            {modalOpen ? <GameOverModal /> : <GameOverModal hidden />}
+            {modalOpen ? <GameOverModal resetGame = {resetGame} /> : <GameOverModal hidden />}
             {/* <button onClick={openModal}>click me</button> */}
         </div>
     );
